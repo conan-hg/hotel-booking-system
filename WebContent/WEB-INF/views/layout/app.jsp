@@ -5,7 +5,6 @@
     <head>
         <meta charset="UTF-8">
         <title>予約システム</title>
-
     </head>
     <body>
     	<div id="wrapper">
