@@ -20,7 +20,7 @@ public class GuestValidator {
 			errors.add(password_error);
 		}
 
-		String phone_error = validatePhone(g.getPhone().toString());
+		String phone_error = validatePhone(g.getPhone());
 		if(!phone_error.equals("")) {
 			errors.add(phone_error);
 		}

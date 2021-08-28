@@ -32,7 +32,7 @@ public class Guest {
 	private String password;
 
 	@Column(name = "phone", nullable = false, unique = true)
-    private Integer phone;
+    private String phone;
 
 	@Column(name = "mail",  nullable = false, unique = true)
 	private String mail;
@@ -68,11 +68,11 @@ public class Guest {
 		this.password = password;
 	}
 
-	public Integer getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(Integer phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
