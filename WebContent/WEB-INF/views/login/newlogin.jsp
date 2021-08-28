@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="ja">
 	<head>
-		<meta charset="UTF-8">
 		<title>新規・ログインページ</title>
 	</head>
 	<body>
@@ -15,7 +14,7 @@
 					<h2>ログイン</h2>
 					<form method="POST" action="<c:url value='/login' />">
 
-						<label for="name">社員番号</label><br />
+						<label for="name">氏名</label><br />
 						<input type="text"name="name"  />
 						<br /> <br />
 

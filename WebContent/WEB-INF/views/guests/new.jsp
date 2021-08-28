@@ -3,19 +3,17 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>予約システム</title>
+        <title>新規登録ページ</title>
     </head>
     <body>
     	<div id="wrapper">
     		<div id="header">
-    			<div id="header_menu ">
-    				<h2><a href="<c:url value='/newlogin' />">reserve</a></h2>&nbsp;
-    				<h2><a href="<c:url value='/login' />">my reservation</a></h2>&nbsp;
-    				<h2><a href="<c:url value='/faq/index' />">FAQ.</a></h2>&nbsp;
-    			</div>
+    			<p><a href="<c:url value='/index.html' />">トップページへ戻る</a></p>
     		</div>
     		<div id="content">
-    			<h1>shibuya.hotel</h1>
+    			<form method="POST" action="<c:url value='/guests/create' />">
+            		<c:import url="_form.jsp" />
+        		</form>
     		</div>
     	</div>
 
