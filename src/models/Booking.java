@@ -33,13 +33,13 @@ public class Booking {
 	private Guest guest;
 
 	@Column(name = "room_type", nullable = false)
-	private Integer room_type;
+	private String room_type;
 
 	@Column(name = "adult_people", nullable = false)
-	private Integer adult_people;
+	private String adult_people;
 
 	@Column(name = "child_people", nullable = false)
-	private Integer child_people;
+	private String child_people;
 
 	@Column(name = "check_in_date", nullable = false)
 	private Date check_in_date;
@@ -76,27 +76,27 @@ public class Booking {
 		this.guest = guest;
 	}
 
-	public Integer getRoom_type() {
+	public String getRoom_type() {
 		return room_type;
 	}
 
-	public void setRoom_type(Integer room_type) {
+	public void setRoom_type(String room_type) {
 		this.room_type = room_type;
 	}
 
-	public Integer getAdult_people() {
+	public String getAdult_people() {
 		return adult_people;
 	}
 
-	public void setAdult_people(Integer adult_people) {
+	public void setAdult_people(String adult_people) {
 		this.adult_people = adult_people;
 	}
 
-	public Integer getChild_people() {
+	public String getChild_people() {
 		return child_people;
 	}
 
-	public void setChild_people(Integer child_people) {
+	public void setChild_people(String child_people) {
 		this.child_people = child_people;
 	}
 
@@ -147,6 +147,7 @@ public class Booking {
 	public void setDelete_flag(Integer delete_flag) {
 		this.delete_flag = delete_flag;
 	}
+
 
 
 

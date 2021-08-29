@@ -11,9 +11,10 @@
 </c:if>
 <label for="room_type">部屋のタイプ</label><br />
 <select name="room_type">
-    <option value="0"<c:if test="${employee.room_type == 0}"> selected</c:if>>Aタイプ</option>
-    <option value="1"<c:if test="${employee.room_type == 1}"> selected</c:if>>Bタイプ</option>
-    <option value="2"<c:if test="${employee.room_type == 2}"> selected</c:if>>cタイプ</option>
+	<option value="0"<c:if test="${employee.room_type == 0}"> selected</c:if>>-------</option>
+    <option value="1"<c:if test="${employee.room_type == 1}"> selected</c:if>>Aタイプ</option>
+    <option value="2"<c:if test="${employee.room_type == 2}"> selected</c:if>>Bタイプ</option>
+    <option value="3"<c:if test="${employee.room_type == 3}"> selected</c:if>>cタイプ</option>
 </select>
 <br /><br /><br />
 
