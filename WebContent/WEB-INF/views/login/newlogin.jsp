@@ -12,7 +12,7 @@
 			<div id="content">
 				<div id="login_menu">
 					<h2>ログイン</h2>
-					<form method="POST" action="<c:url value='/login' />">
+					<form method="POST" action="<c:url value='/newlogin' />">
 
 						<label for="name">氏名</label><br />
 						<input type="text"name="name"  />
@@ -35,8 +35,3 @@
 
 	</body>
 </html>
-
-
-
-
-
