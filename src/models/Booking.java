@@ -35,11 +35,17 @@ public class Booking {
 	@Column(name = "room_type", nullable = false)
 	private Integer room_type;
 
-	@Column(name = "number_people", nullable = false)
-	private Integer number_people;
+	@Column(name = "adult_people", nullable = false)
+	private Integer adult_people;
 
-	@Column(name = "booking_date", nullable = false)
-	private Date booking_date;
+	@Column(name = "child_people", nullable = false)
+	private Integer child_people;
+
+	@Column(name = "check_in_date", nullable = false)
+	private Date check_in_date;
+
+	@Column(name = "check_out_date", nullable = false)
+	private Date check_out_date;
 
 	@Lob
 	@Column(name = "content", nullable = false)
@@ -53,15 +59,6 @@ public class Booking {
 
 	@Column(name = "delete_flag",  nullable = false)
 	private Integer delete_flag;
-
-
-	public Integer getDelete_flag() {
-		return delete_flag;
-	}
-
-	public void setDelete_flag(Integer delete_flag) {
-		this.delete_flag = delete_flag;
-	}
 
 	public Integer getId() {
 		return id;
@@ -87,20 +84,36 @@ public class Booking {
 		this.room_type = room_type;
 	}
 
-	public Integer getNumber_people() {
-		return number_people;
+	public Integer getAdult_people() {
+		return adult_people;
 	}
 
-	public void setNumber_people(Integer number_people) {
-		this.number_people = number_people;
+	public void setAdult_people(Integer adult_people) {
+		this.adult_people = adult_people;
 	}
 
-	public Date getBooking_date() {
-		return booking_date;
+	public Integer getChild_people() {
+		return child_people;
 	}
 
-	public void setBooking_date(Date booking_date) {
-		this.booking_date = booking_date;
+	public void setChild_people(Integer child_people) {
+		this.child_people = child_people;
+	}
+
+	public Date getCheck_in_date() {
+		return check_in_date;
+	}
+
+	public void setCheck_in_date(Date check_in_date) {
+		this.check_in_date = check_in_date;
+	}
+
+	public Date getCheck_out_date() {
+		return check_out_date;
+	}
+
+	public void setCheck_out_date(Date check_out_date) {
+		this.check_out_date = check_out_date;
 	}
 
 	public String getContent() {
@@ -126,6 +139,18 @@ public class Booking {
 	public void setUpdated_at(Timestamp updated_at) {
 		this.updated_at = updated_at;
 	}
+
+	public Integer getDelete_flag() {
+		return delete_flag;
+	}
+
+	public void setDelete_flag(Integer delete_flag) {
+		this.delete_flag = delete_flag;
+	}
+
+
+
+
 
 
 
