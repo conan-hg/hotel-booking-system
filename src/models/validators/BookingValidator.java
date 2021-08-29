@@ -5,7 +5,7 @@ import java.util.List;
 
 import models.Booking;
 
-public class GuestValidators {
+public class BookingValidator {
 	public static List<String> validate(Booking b) {
 		ArrayList<String> errors = new ArrayList<String>();
 
@@ -34,16 +34,11 @@ public class GuestValidators {
             errors.add(check_out_date_error);
         }
 
-        String content_error = _validateContent(b.getContent());
-        if(!content_error.equals("")) {
-            errors.add(content_error);
-        }
-
         return errors;
 	}
 
 	private static String _validateRoom_type(String room_type) {
-        if(room_type == null || room_type.equals("")) {
+        if(room_type == null || room_type.equals("") || room_type.equals("-------")) {
             return "お部屋のタイプを入力してください。";
             }
 
@@ -82,30 +77,5 @@ public class GuestValidators {
         return "";
     }
 
-    private static String _validateContent(String content) {
-        if(content == null || content.equals("")) {
-            return "内容を入力してください。";
-            }
-
-        return "";
-    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

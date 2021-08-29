@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Booking;
 import models.Guest;
-import models.validators.ReportValidator;
+import models.validators.BookingValidator;
 import utils.DBUtil;
 
 /**
@@ -45,40 +45,42 @@ public class BookingCreateServlet extends HttpServlet {
 
 			b.setGuest((Guest)request.getSession().getAttribute("login_guest"));
 
+			b.setRoom_type(request.getParameter("room_type"));
+
+			b.setAdult_people(request.getParameter("adult_people"));
+			b.setChild_people(request.getParameter("child_people"));
 
 
-			Date check_in_date = new Date(System.currentTimeMillis());
-			String rd_str = request.getParameter("report_date");
-			if(rd_str != null && !rd_str.equals("")) {
-				report_date = Date.valueOf(request.getParameter("report_date"));
-			}
-			r.setReport_date(report_date);
+			b.setCheck_in_date(Date.valueOf(request.getParameter("check_in_date")));
+			b.setCheck_out_date(Date.valueOf(request.getParameter("check_out_date")));
 
-			r.setTitle(request.getParameter("title"));
-			r.setContent(request.getParameter("content"));
+
+			b.setContent(request.getParameter("content"));
+
+			b.setDelete_flag(0);
 
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-			r.setCreated_at(currentTime);
-			r.setUpdated_at(currentTime);
+			b.setCreated_at(currentTime);
+			b.setUpdated_at(currentTime);
 
-			List<String> errors = ReportValidator.validate(r);
+			List<String> errors = BookingValidator.validate(b);
 			if(errors.size() > 0) {
 				em.close();
 
 				request.setAttribute("_toekn", request.getSession().getId());
-				request.setAttribute("report", r);
+				request.setAttribute("report", b);
 				request.setAttribute("errors", errors);
 
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB_INF/views/reports/new.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("/WEB_INF/views/booking/new.jsp");
 				rd.forward(request, response);
 			} else {
 				em.getTransaction().begin();
-				em.persist(r);
+				em.persist(b);
 				em.getTransaction().commit();
 				em.close();
 				request.getSession().setAttribute("flush", "登録が完了しました。");
 
-				response.sendRedirect(request.getContextPath() + "/reports/index");
+				response.sendRedirect(request.getContextPath() + "/index.html");
 			}
 
 		}

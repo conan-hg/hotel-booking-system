@@ -32,7 +32,7 @@
 <input type="date" name="check_out_date" value="<fmt:formatDate value='${booking.check_out_date}' pattern='yyyy-MM-dd' />" />
 <br /><br /><br />
 
-<label for="content">ご宿泊に当たっての質問</label><br />
+<label for="content">ご宿泊に当たって何かご質問がありましたら、ご記入ください。</label><br />
 <input type="text" name="content" value="${booking.content}" />
 <br /><br />
 
