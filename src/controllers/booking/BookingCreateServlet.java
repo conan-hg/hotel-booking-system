@@ -68,10 +68,10 @@ public class BookingCreateServlet extends HttpServlet {
 				em.close();
 
 				request.setAttribute("_toekn", request.getSession().getId());
-				request.setAttribute("report", b);
+				request.setAttribute("booking", b);
 				request.setAttribute("errors", errors);
 
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB_INF/views/booking/new.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/new.jsp");
 				rd.forward(request, response);
 			} else {
 				em.getTransaction().begin();

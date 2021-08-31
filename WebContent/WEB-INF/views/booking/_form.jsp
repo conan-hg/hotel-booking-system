@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:if test="${errors != null}">
     <div id="flush_error">
         入力内容にエラーがあります。<br />
@@ -9,6 +10,12 @@
 
     </div>
 </c:if>
+<c:if test="${flush != null}">
+	<div id="flush_success">
+	    <c:out value="${flush}"></c:out>
+    </div>
+</c:if>
+<br /><br />
 <label for="room_type">部屋のタイプ</label><br />
 <select name="room_type">
 	<option value="0"<c:if test="${employee.room_type == 0}"> selected</c:if>>-------</option>
@@ -25,9 +32,9 @@
 <input type="text" name="child_people" value="${booking.child_people}" /><br />
 <br /><br />
 
-<label for="booking_date">日程</label><br />
+<label for="check_in_date">日程</label><br />
 <label>＜チェックイン＞</label><br />
-<input type="date" name="check_in_date" value="<fmt:formatDate value='${booking.check_in_date}' pattern='yyyy-MM-dd' />" /><br />
+<input type="date" name="check_in_date" value="<fmt:formatDate value='${booking.check_in_date}' pattern='yyyy-MM-dd'/>" /><br />
 <label>＜チェックアウト＞</label><br />
 <input type="date" name="check_out_date" value="<fmt:formatDate value='${booking.check_out_date}' pattern='yyyy-MM-dd' />" />
 <br /><br /><br />

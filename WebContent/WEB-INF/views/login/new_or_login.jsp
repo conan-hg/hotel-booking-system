@@ -12,7 +12,10 @@
 			<div id="content">
 				<div id="login_menu">
 					<h2>ログイン</h2>
-					<form method="POST" action="<c:url value='/newlogin' />">
+					<form method="POST" action="<c:url value='/new/or/login' />">
+						<c:if test="${hasError}">
+							<div id="flush_error">氏名かパスワードが間違っています。</div>
+						</c:if>
 
 						<label for="name">氏名</label><br />
 						<input type="text"name="name"  />

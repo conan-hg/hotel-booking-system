@@ -1,28 +1,23 @@
 package controllers.booking;
 
 import java.io.IOException;
-import java.sql.Date;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Booking;
-
 /**
- * Servlet implementation class BookingNewServlet
+ * Servlet implementation class BookingIndexServlet
  */
-@WebServlet("/booking/new")
-public class BookingNewServlet extends HttpServlet {
+@WebServlet("/booking/index")
+public class BookingIndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BookingNewServlet() {
+    public BookingIndexServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,28 +26,8 @@ public class BookingNewServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("_token", request.getSession().getId());
-
-		Booking b = new Booking();
-
-		b.setCheck_in_date(Date.valueOf("2021-01-01"));
-		b.setCheck_out_date(Date.valueOf("2021-01-01"));
-		request.setAttribute("booking", b);
-
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/new.jsp");
-		rd.forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

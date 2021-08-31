@@ -16,16 +16,16 @@ import utils.DBUtil;
 import utils.EncryptUtil;
 
 /**
- * Servlet implementation class NewLoginServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/newlogin")
-public class NewLoginServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NewLoginServlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,7 +37,7 @@ public class NewLoginServlet extends HttpServlet {
 		request.setAttribute("_token", request.getSession().getId());
 		request.setAttribute("hasError",false);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/newlogin.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
 		rd.forward(request, response);
 	}
 
@@ -45,7 +45,6 @@ public class NewLoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		Boolean check_result = false;
 
 		String name = request.getParameter("name");
@@ -77,48 +76,18 @@ public class NewLoginServlet extends HttpServlet {
 
 		if(!check_result) {
 			request.setAttribute("_token", request.getSession().getId());
-			request.setAttribute("hasError", true);
-			request.setAttribute("name", name);
+            request.setAttribute("hasError", true);
+            request.setAttribute("name", name);
 
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/loing/newlogin.jsp");
+
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
 			rd.forward(request, response);
 		} else{
 			request.getSession().setAttribute("login_guest", g);
 
 			request.getSession().setAttribute("flush", "ログインしました。");
-			response.sendRedirect(request.getContextPath() + "/booking/new");
+			response.sendRedirect(request.getContextPath() + "/booking/index");
 		}
-
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

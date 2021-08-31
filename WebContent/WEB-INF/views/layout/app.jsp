@@ -9,7 +9,7 @@
     	<div id="wrapper">
     		<div id="header">
     			<div id="header_menu ">
-    				<h2><a href="<c:url value='/newlogin' />">reserve</a></h2>&nbsp;
+    				<h2><a href="<c:url value='/new/or/login' />">reserve</a></h2>&nbsp;
     				<h2><a href="<c:url value='/login' />">my reservation</a></h2>&nbsp;
     				<h2><a href="<c:url value='/faq/index' />">FAQ.</a></h2>&nbsp;
     			</div>
@@ -18,6 +18,5 @@
     			<h1>shibuya.hotel</h1>
     		</div>
     	</div>
-
     </body>
 </html>

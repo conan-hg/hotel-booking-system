@@ -75,7 +75,7 @@ public class GuestsCreateServlet extends HttpServlet {
 				em.getTransaction().commit();
 				em.close();
 
-				response.sendRedirect(request.getContextPath() + "/index.html");
+				response.sendRedirect(request.getContextPath() + "/new/or/login");
 
 
 			}

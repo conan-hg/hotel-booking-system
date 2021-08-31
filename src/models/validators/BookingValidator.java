@@ -38,7 +38,7 @@ public class BookingValidator {
 	}
 
 	private static String _validateRoom_type(String room_type) {
-        if(room_type == null || room_type.equals("") || room_type.equals("-------")) {
+        if(room_type.equals("0")) {
             return "お部屋のタイプを入力してください。";
             }
 
@@ -62,7 +62,7 @@ public class BookingValidator {
     }
 
     private static String _validateCheck_in_date(String check_in_date) {
-        if(check_in_date == null || check_in_date.equals("")) {
+        if(check_in_date == null || check_in_date.equals("2021-01-01")) {
             return "チェックインを入力してください。";
             }
 
@@ -70,7 +70,7 @@ public class BookingValidator {
     }
 
     private static String _validateCheck_out_date(String check_out_date) {
-        if(check_out_date == null || check_out_date.equals("")) {
+        if(check_out_date == null || check_out_date.equals("2021-01-01")) {
             return "チェックアウトを入力してください。";
             }
 
