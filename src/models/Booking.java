@@ -19,7 +19,12 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(
 			name = "getAllbooking",
-			query = "SELECT b FROM Booking AS b ORDER BY b.id DESC")
+			query = "SELECT b FROM Booking AS b ORDER BY b.id DESC"
+	),
+	@NamedQuery(
+			name = "getMyAllbooking",
+			query = "SELECT b FROM Booking AS b WHERE b.guest = :guest ORDER BY b.id DESC"
+	)
 })
 @Entity
 public class Booking {
