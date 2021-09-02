@@ -18,7 +18,11 @@
 	                    <tbody>
 	                        <tr>
 	                            <th>お部屋のタイプ</th>
-	                            <td><c:out value="${booking.room_type}" /></td>
+	                            <td>
+	                            	<c:if test="${booking.room_type == 1}">Aタイプ</c:if>
+	                            	<c:if test="${booking.room_type == 2}">Bタイプ</c:if>
+	                            	<c:if test="${booking.room_type == 3}">Cタイプ</c:if>
+	                            </td>
 	                        </tr>
 	                        <tr>
 	                            <th>チェックイン</th>

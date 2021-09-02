@@ -21,7 +21,6 @@
 		                <h2>お探しのデータは見つかりませんでした。</h2>
 		            </c:otherwise>
 		        </c:choose>
-		        <p><a href="<c:url value="/booking/index" />">一覧に戻る</a></p>
 		    </div>
     	</div>
     </body>

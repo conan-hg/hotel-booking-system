@@ -35,6 +35,7 @@ public class BookingNewServlet extends HttpServlet {
 
 		Booking b = new Booking();
 
+		b.setRoom_type("0");
 		b.setCheck_in_date(Date.valueOf("2021-01-01"));
 		b.setCheck_out_date(Date.valueOf("2021-01-01"));
 		request.setAttribute("booking", b);
