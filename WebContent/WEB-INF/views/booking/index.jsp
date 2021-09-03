@@ -29,7 +29,11 @@
 		                </tr>
 		                <c:forEach var="booking" items="${booking}" varStatus="status">
 		                    <tr class="row${status.count % 2}">
-		                        <td class="booking_room_type"><c:out value="${booking.room_type}" /></td>
+		                        <td class="booking_room_type">
+		                        	<c:if test="${booking.room_type == 1}">Aタイプ</c:if>
+	                            	<c:if test="${booking.room_type == 2}">Bタイプ</c:if>
+	                            	<c:if test="${booking.room_type == 3}">Cタイプ</c:if>
+		                        </td>
 		                        <td class="booking_check_in_date"><fmt:formatDate value='${booking.check_in_date}' pattern='yyyy-MM-dd' /></td>
 		                        <td class="booking_check_out_date"><fmt:formatDate value='${booking.check_out_date}' pattern='yyyy-MM-dd' /></td>
 		                        <td class="booking_adult_people"><c:out value="${booking.adult_people}" /></td>

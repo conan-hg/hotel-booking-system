@@ -1,4 +1,4 @@
-package controllers.booking;
+		package controllers.booking;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -61,12 +61,13 @@ public class BookingUpdateServlet extends HttpServlet {
 			if(errors.size() > 0) {
 				em.close();
 
-				request.setAttribute("_toekn", request.getSession().getId());
+				request.setAttribute("_token", request.getSession().getId());
 				request.setAttribute("booking", b);
 				request.setAttribute("errors", errors);
 
+
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/edit.jsp");
-				rd.forward(request, response);
+		        rd.forward(request, response);
 			} else {
 				em.getTransaction().begin();
 				em.getTransaction().commit();
