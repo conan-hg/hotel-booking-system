@@ -15,6 +15,12 @@
 		            </div>
 		        </c:if>
 		        <h2>予約　一覧</h2>
+		        <c:if test="${sessionScope.login_guest != null}">
+		        	<div id="guest_name">
+		        		<c:out value="${sessionScope.login_guest.name}" />&nbsp;様&nbsp;&nbsp;&nbsp;
+		        		<a href="<c:url value='/logout' />">ログアウト</a>
+		        	</div>
+		        </c:if>
     		</div>
     		<div id="content">
     			<table id="booking_list">
@@ -38,7 +44,16 @@
 		                        <td class="booking_check_out_date"><fmt:formatDate value='${booking.check_out_date}' pattern='yyyy-MM-dd' /></td>
 		                        <td class="booking_adult_people"><c:out value="${booking.adult_people}" /></td>
 		                        <td class="booking_child_people"><c:out value="${booking.child_people}" /></td>
-		                        <td class="booking_action"><a href="<c:url value='/booking/show?id=${booking.id}' />">詳細を見る</a></td>
+		                        <td class="booking_action">
+		                        <c:choose>
+		                        	<c:when test="${booking.delete_flag == 1}">
+		                        		(取り消し済み)
+		                        	</c:when>
+		                        	<c:otherwise>
+		                        		<a href="<c:url value='/booking/show?id=${booking.id}' />">詳細を見る</a>
+		                        	</c:otherwise>
+		                        </c:choose>
+		                        </td>
 		                    </tr>
 		                </c:forEach>
 		            </tbody>

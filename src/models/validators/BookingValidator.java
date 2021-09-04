@@ -1,6 +1,8 @@
 package models.validators;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import models.Booking;
@@ -24,15 +26,35 @@ public class BookingValidator {
             errors.add(child_people_error);
         }
 
-        String check_in_date_error = _validateCheck_in_date(String.valueOf(b.getCheck_in_date()));
+/*        String check_in_date_error = _validateCheck_in_date(String.valueOf(b.getCheck_in_date()));
         if(!check_in_date_error.equals("")) {
             errors.add(check_in_date_error);
-        }
+        }*/
 
-        String check_out_date_error = _validateCheck_out_date(String.valueOf(b.getCheck_out_date()));
+        String check_out_date_error = _validateCheck_out_date(String.valueOf(b.getCheck_in_date()), String.valueOf(b.getCheck_out_date()));
         if(!check_out_date_error.equals("")) {
             errors.add(check_out_date_error);
         }
+
+        Date ci = b.getCheck_in_date();
+        Date co = b.getCheck_out_date();
+
+        long miliseconds = System.currentTimeMillis();
+        Date date = new Date(miliseconds);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        calendar.add(Calendar.DATE, -1);
+
+        java.util.Date d1 = calendar.getTime();
+
+        if(ci.after(co) || d1.after(ci) || d1.after(co)) {
+        	errors.add("チェックイン日とチェックアウト日を確認して下さい。");
+        }
+
+
+
 
         return errors;
 	}
@@ -61,17 +83,17 @@ public class BookingValidator {
         return "";
     }
 
-    private static String _validateCheck_in_date(String check_in_date) {
-        if(check_in_date == null || check_in_date.equals("2021-01-01")) {
+ /*  private static String _validateCheck_in_date(String check_in_date) {
+        if(check_in_date == null ) {
             return "チェックインを入力してください。";
             }
 
         return "";
     }
-
-    private static String _validateCheck_out_date(String check_out_date) {
-        if(check_out_date == null || check_out_date.equals("2021-01-01")) {
-            return "チェックアウトを入力してください。";
+*/
+    private static String _validateCheck_out_date(String check_out_date, String check_in_date) {
+        if(check_out_date.equals(check_in_date)) {
+            return "チェックイン日とチェックアウト日を確認して下さい。";
             }
 
         return "";
@@ -79,3 +101,17 @@ public class BookingValidator {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

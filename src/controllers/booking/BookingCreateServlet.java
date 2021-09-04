@@ -70,6 +70,7 @@ public class BookingCreateServlet extends HttpServlet {
 				request.setAttribute("_toekn", request.getSession().getId());
 				request.setAttribute("booking", b);
 				request.setAttribute("errors", errors);
+				request.getSession().removeAttribute("flush");
 
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/new.jsp");
 				rd.forward(request, response);

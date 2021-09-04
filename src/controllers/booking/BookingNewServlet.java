@@ -35,9 +35,14 @@ public class BookingNewServlet extends HttpServlet {
 
 		Booking b = new Booking();
 
+
+		long miliseconds = System.currentTimeMillis();
+        Date date = new Date(miliseconds);
+
+
 		b.setRoom_type("0");
-		b.setCheck_in_date(Date.valueOf("2021-01-01"));
-		b.setCheck_out_date(Date.valueOf("2021-01-01"));
+		b.setCheck_in_date(date);
+		b.setCheck_out_date(date);
 		request.setAttribute("booking", b);
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/new.jsp");

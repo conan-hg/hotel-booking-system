@@ -43,14 +43,9 @@
 	                    </tbody>
 	                </table>
 
-	                <c:choose>
-                                <c:when test="${booking.delete_flag == 1}">
-                                    （削除済み）
-                                </c:when>
-                                <c:otherwise>
-                                    <a href="<c:url value='/booking/edit?id=${booking.id}' />">詳細を表示</a>
-                                </c:otherwise>
-                    </c:choose>
+	                <c:if test="${sessionScope.login_guest.id == booking.guest.id}">
+	                    <p><a href="<c:url value="/booking/edit?id=${booking.id}" />">この日報を編集する</a></p>
+	                </c:if>
 	                </div>
 	            </c:when>
 	            <c:otherwise>
