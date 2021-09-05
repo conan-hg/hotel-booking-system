@@ -8,7 +8,12 @@
     <body>
     	<div id="wrapper">
     		<div id="header">
-    			<p><a href="<c:url value='/index.html' />">トップページへ戻る</a></p>
+    			<c:if test="${sessionScope.login_guest != null}">
+		        	<div id="guest_name">
+		        		<c:out value="${sessionScope.login_guest.name}" />&nbsp;様&nbsp;&nbsp;&nbsp;
+		        		<a href="<c:url value='/logout' />">ログアウト</a>
+		        	</div>
+		        </c:if>
     		</div>
     		<div id="content">
     			<form method="POST" action="<c:url value='/booking/create' />">

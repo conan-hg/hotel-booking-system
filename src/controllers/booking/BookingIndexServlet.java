@@ -45,14 +45,27 @@ public class BookingIndexServlet extends HttpServlet {
 		} catch(Exception e) {
 			page = 1;
 		}
-		List<Booking> booking = em.createNamedQuery("getMyAllbooking", Booking.class)
-									.setParameter("guest", login_guest)
-									.setFirstResult(15 * (page -1))
-									.setMaxResults(15)
-								    .getResultList();
+
+		if(login_guest.getAdmin_flag() == 0){
+			List<Booking> booking = em.createNamedQuery("getAllbooking", Booking.class)
+					.setFirstResult(15 * (page -1))
+					.setMaxResults(15)
+				    .getResultList();
+
+			request.setAttribute("booking", booking);
+
+		} else{
+			List<Booking> booking = em.createNamedQuery("getMyAllbooking", Booking.class)
+					.setParameter("guest", login_guest)
+					.setFirstResult(15 * (page -1))
+					.setMaxResults(15)
+				    .getResultList();
+
+			request.setAttribute("booking", booking);
+		}
+
 		em.close();
 
-		request.setAttribute("booking", booking);
 		request.setAttribute("page", page);
 
 		if(request.getSession().getAttribute("flush") != null) {

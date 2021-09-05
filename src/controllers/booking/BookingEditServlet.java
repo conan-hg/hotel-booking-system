@@ -40,7 +40,7 @@ public class BookingEditServlet extends HttpServlet {
 		em.close();
 
 		Guest login_guest = (Guest)request.getSession().getAttribute("login_guest");
-		if(b != null && login_guest.getId() == b.getGuest().getId()) {
+		if(b != null && (login_guest.getId() == b.getGuest().getId() || login_guest.getAdmin_flag() == 0)) {
 			request.setAttribute("booking", b);
 			request.setAttribute("_token", request.getSession().getId());
 			request.getSession().setAttribute("booking_id", b.getId());

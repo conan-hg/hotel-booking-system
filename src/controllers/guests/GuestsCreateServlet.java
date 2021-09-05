@@ -59,6 +59,8 @@ public class GuestsCreateServlet extends HttpServlet {
 			g.setCreated_at(currentTime);
 			g.setUpdated_at(currentTime);
 
+			g.setAdmin_flag(1);
+
 			List<String> errors = GuestValidator.validate(g, true);
 			if(errors.size() > 0) {
 				em.close();

@@ -11,7 +11,7 @@
     			<div id="header_menu ">
     				<h2><a href="<c:url value='/new/or/login' />">reserve</a></h2>&nbsp;
     				<h2><a href="<c:url value='/login' />">my reservation</a></h2>&nbsp;
-    				<h2><a href="<c:url value='/faq/indx' />">FAQ.</a></h2>&nbsp;
+    				<h2><a href="<c:url value='/faq/index' />">FAQ.</a></h2>&nbsp;
     			</div>
     		</div>
     		<div id="content">

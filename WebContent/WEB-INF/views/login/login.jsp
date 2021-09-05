@@ -7,7 +7,7 @@
 	<body>
 		<div id="wrapper">
 			<div id="header">
-				<h1>shibuya.hotel</h1>
+				<p><a href="<c:url value="/index.html" />">トップページに戻る</a></p>
 			</div>
 			<div id="content">
 				<div id="login_menu">

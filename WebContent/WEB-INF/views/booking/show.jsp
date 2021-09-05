@@ -12,6 +12,7 @@
     			<c:choose>
 	            <c:when test="${booking != null}">
 	                <h2>日報　詳細ページ</h2>
+	                <p><a href="<c:url value="/booking/index" />">予約一覧に戻る</a></p>
 	                <div id="content">
 
 	                <table>
@@ -43,7 +44,7 @@
 	                    </tbody>
 	                </table>
 
-	                <c:if test="${sessionScope.login_guest.id == booking.guest.id}">
+	                <c:if test="${sessionScope.login_guest.id == booking.guest.id || sessionScope.login_guest.getAdmin_flag() == 0}">
 	                    <p><a href="<c:url value="/booking/edit?id=${booking.id}" />">この日報を編集する</a></p>
 	                </c:if>
 	                </div>
@@ -52,7 +53,7 @@
 	                <h2>お探しのデータは見つかりませんでした。</h2>
 	            </c:otherwise>
         		</c:choose>
-		        <p><a href="<c:url value="/booking/index" />">一覧に戻る</a></p>
+
 		    </div>
 
     	</div>

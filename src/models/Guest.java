@@ -43,6 +43,9 @@ public class Guest {
 	@Column(name = "updated_at",  nullable = false)
 	private Timestamp updated_at;
 
+	@Column(name = "admin_flag", nullable = false)
+    private Integer admin_flag;
+
 
 	public Integer getId() {
 		return id;
@@ -99,6 +102,16 @@ public class Guest {
 	public void setUpdated_at(Timestamp updated_at) {
 		this.updated_at = updated_at;
 	}
+
+	public Integer getAdmin_flag() {
+		return admin_flag;
+	}
+
+	public void setAdmin_flag(Integer admin_flag) {
+		this.admin_flag = admin_flag;
+	}
+
+
 
 
 
