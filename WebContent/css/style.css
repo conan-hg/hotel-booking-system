@@ -1,0 +1,127 @@
+@CHARSET "UTF-8";
+
+body {
+	color: #333333;
+	font_family: Arial,Helvetica,sans-serif;
+}
+
+.header_menu_1 {
+	position: relative;
+	padding: 0px 15px 15px;
+	float: left;
+}
+
+.header_menu_2 {
+	position: relative;
+	padding: 0px 15px 15px;
+	float: left;
+
+}
+
+.header_menu_3 {
+	position: relative;
+	padding: 0px 15px 15px;
+	float: left;
+
+}
+
+#header {
+    padding-top: 50px;
+    padding-left: 60%;
+    display: inline-block;
+
+}
+
+.title {
+	margin: 130px 0px 0px 0px;
+	text-align: center;
+    font-size: 50px;
+}
+
+.faq_title {
+	height: 90px;
+	width:70%;
+	margin: 0px auto 20px auto;
+    font-size: 45px;
+    border-bottom: 3px solid #aaa;
+}
+
+.faq_1 {
+	width:50%;
+	margin: 0px auto 0px auto;
+	padding: 30px 0px;
+	border-bottom: 2px solid #aaa
+
+}
+.faq_q1 {
+	margin-bottom: 10px;
+}
+
+.faq_2 {
+	width:50%;
+	margin: 0px auto 0px auto;
+	padding: 30px 0px;
+	border-bottom: 2px solid #aaa
+
+}
+.faq_q2 {
+	margin-bottom: 10px;
+}
+
+.faq_3 {
+	width:50%;
+	margin: 0px auto 0px auto;
+	padding: 30px 0px;
+	border-bottom: 2px solid #aaa
+
+}
+.faq_q3 {
+	margin-bottom: 10px;
+}
+
+.faq_4 {
+	width:50%;
+	margin: 0px auto 0px auto;
+	padding: 30px 0px;
+	border-bottom: 2px solid #aaa
+
+}
+.faq_q4 {
+	margin-bottom: 10px;
+}
+
+.faq_content {
+	margin: 80px auto 100px auto;
+	text-align: center;
+	font-size: 10px
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
