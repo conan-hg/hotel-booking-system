@@ -14,7 +14,7 @@
 		                <p><a href="<c:url value="/booking/index" />">予約一覧に戻る</a></p>
 
 		                <form method="POST" action="<c:url value='/booking/update' />">
-		                    <c:import url="_form.jsp" />
+		                    <c:import url="booking_form.jsp" />
 		                </form>
 
 		                <p><a href="#" onclick="confirmDestroy()">この予約を削除する</a></p>

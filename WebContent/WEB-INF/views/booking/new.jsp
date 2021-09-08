@@ -17,7 +17,7 @@
     		</div>
     		<div id="content">
     			<form method="POST" action="<c:url value='/booking/create' />">
-            		<c:import url="_form.jsp" />
+            		<c:import url="booking_form.jsp" />
         		</form>
     		</div>
     	</div>
