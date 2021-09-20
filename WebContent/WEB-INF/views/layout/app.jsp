@@ -11,9 +11,10 @@
     <body>
     	<div id="wrapper">
     		<div id="header">
+    			<div class="header_menu_0"><h2><a href="<c:url value='/index.html' />">top</a></h2></div>&nbsp;
     			<div class="header_menu_1"><h2><a href="<c:url value='/new/or/login' />">reserve</a></h2></div>&nbsp;
-    			<div class="header_menu_2"><h2><a href="<c:url value='/login' />">my reservation</a></h2></div>&nbsp;
-    			<div class="header_menu_3"><h2><a href="<c:url value='/faq/index' />">FAQ.</a></h2></div>&nbsp;
+    			<div class="header_menu_2"><h2><a href="<c:url value='/login' />">my reserve</a></h2></div>&nbsp;
+    			<div class="header_menu_3"><h2><a href="<c:url value='/faq/index' />">faq.</a></h2></div>&nbsp;
     		</div>
     		<div id="content">
     			${param.content}

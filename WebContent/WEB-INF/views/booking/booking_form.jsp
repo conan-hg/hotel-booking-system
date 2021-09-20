@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:if test="${errors != null}">
     <div id="flush_error">
-        入力内容にエラーがあります。<br />
+        入力内容にエラーがあります。<br /><br />
         <c:forEach var="error" items="${errors}">
              <c:out value="${error}" /><br />
         </c:forEach>
@@ -39,10 +39,9 @@
 <input type="date" name="check_out_date" value="<fmt:formatDate value='${booking.check_out_date}' pattern='yyyy-MM-dd' />" />
 <br /><br /><br />
 
-<label for="content">ご宿泊に当たって何かご質問がありましたら、ご記入ください。</label><br />
+<label for="content">ご宿泊に当たって<br />ご質問がありましたら、<br />ご記入ください。</label><br />
 <input type="text" name="content" value="${booking.content}" />
 <br /><br />
-
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">登録</button>

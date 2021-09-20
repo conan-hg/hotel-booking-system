@@ -5,59 +5,79 @@
     <head>
         <meta charset="UTF-8">
         <title>予約リスト</title>
+        <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
+        <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
     <body>
     	<div id="wrapper">
     		<div id="header">
-    			<c:if test="${flush != null}">
-		            <div id="flush_success">
-		                <c:out value="${flush}"></c:out>
-		            </div>
-		        </c:if>
-		        <h2>予約　一覧</h2>
-		        <c:if test="${sessionScope.login_guest != null}">
-		        	<div id="guest_name">
-		        		<c:out value="${sessionScope.login_guest.name}" />&nbsp;様&nbsp;&nbsp;&nbsp;
-		        		<a href="<c:url value='/logout' />">ログアウト</a>
-		        	</div>
-		        </c:if>
-    		</div>
+    			<c:if test="${sessionScope.login_guest != null}">
+					<div class="header_menu_4"><c:out value="${sessionScope.login_guest.name}" />　様</div>
+					<div class="header_menu_5"><p><a href="<c:url value="/booking/index" />">reserve一覧</a></p></div>
+					<div class="header_menu_6"><a href="<c:url value='/logout' />">logout</a></div>
+				</c:if>
+			</div>
     		<div id="content">
-    			<table id="booking_list">
+    		<div class="booking_content">
+    		<div class="booking_content_title">
+    			<h1>予約一覧</h1>
+    		</div>
+    		<c:if test="${flush != null}">
+	            <div id="flush_success">
+	                <c:out value="${flush}"></c:out>
+	            </div>
+	        </c:if>
+			<br />
+    		<div class="booking_table">
+    			<div class="booking_list_top">
+    			<table>
+    				<tr>
+    				<c:if test="${boss == 1}">
+    					<td class="booking_guest_id">予約者</td>
+    				</c:if>
+	                	<td class="booking_room_type">部屋のタイプ</td>
+	                    <td class="booking_check_in_date">チェックイン</td>
+	                    <td class="booking_check_out_date">チェックアウト</td>
+	                    <td class="booking_adult_people">大人</td>
+	                    <td class="booking_child_people">小人</td>
+	                    <td class="booking_action">詳細</td>
+	                </tr>
+    			</table>
+    			</div>
+    			<div class="booking_list_content">
+    			<table>
 		            <tbody>
-		                <tr>
-		                	<th class="booking_room_type">部屋のタイプ</th>
-		                    <th class="booking_check_in_date">チェックイン日</th>
-		                    <th class="booking_check_out_date">チェックアウト日</th>
-		                    <th class="booking_adult_people">大人</th>
-		                    <th class="booking_child_people">小人</th>
-		                    <th class="booking_action">詳細</th>
-		                </tr>
 		                <c:forEach var="booking" items="${booking}" varStatus="status">
-		                    <tr class="row${status.count % 2}">
-		                        <td class="booking_room_type">
-		                        	<c:if test="${booking.room_type == 1}">Aタイプ</c:if>
-	                            	<c:if test="${booking.room_type == 2}">Bタイプ</c:if>
-	                            	<c:if test="${booking.room_type == 3}">Cタイプ</c:if>
-		                        </td>
-		                        <td class="booking_check_in_date"><fmt:formatDate value='${booking.check_in_date}' pattern='yyyy-MM-dd' /></td>
-		                        <td class="booking_check_out_date"><fmt:formatDate value='${booking.check_out_date}' pattern='yyyy-MM-dd' /></td>
-		                        <td class="booking_adult_people"><c:out value="${booking.adult_people}" /></td>
-		                        <td class="booking_child_people"><c:out value="${booking.child_people}" /></td>
-		                        <td class="booking_action">
-		                        <c:choose>
-		                        	<c:when test="${booking.delete_flag == 1}">
-		                        		(取り消し済み)
-		                        	</c:when>
-		                        	<c:otherwise>
-		                        		<a href="<c:url value='/booking/show?id=${booking.id}' />">詳細を見る</a>
-		                        	</c:otherwise>
-		                        </c:choose>
-		                        </td>
-		                    </tr>
+	                    <tr class="row${status.count % 2}">
+	                    <c:if test="${boss == 1}">
+    						<td class="booking_guest_id"><c:out value="${booking.guest.name}" /></td>
+    					</c:if>
+	                        <td class="booking_room_type">
+	                        	<c:if test="${booking.room_type == 1}">Aタイプ</c:if>
+                            	<c:if test="${booking.room_type == 2}">Bタイプ</c:if>
+                            	<c:if test="${booking.room_type == 3}">Cタイプ</c:if>
+	                        </td>
+	                        <td class="booking_check_in_date"><fmt:formatDate value='${booking.check_in_date}' pattern='yyyy-MM-dd' /></td>
+	                        <td class="booking_check_out_date"><fmt:formatDate value='${booking.check_out_date}' pattern='yyyy-MM-dd' /></td>
+	                        <td class="booking_adult_people"><c:out value="${booking.adult_people}" /></td>
+	                        <td class="booking_child_people"><c:out value="${booking.child_people}" /></td>
+	                        <td class="booking_action">
+	                        <c:choose>
+	                        	<c:when test="${booking.delete_flag == 1}">
+	                        		取消
+	                        	</c:when>
+	                        	<c:otherwise>
+	                        		<a href="<c:url value='/booking/show?id=${booking.id}' />">詳細へ</a>
+	                        	</c:otherwise>
+	                        </c:choose>
+	                        </td>
+	                    </tr>
 		                </c:forEach>
 		            </tbody>
 		        </table>
+		        </div>
+		    </div>
+		    </div>
     		</div>
     	</div>
     </body>

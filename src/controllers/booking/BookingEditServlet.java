@@ -46,6 +46,10 @@ public class BookingEditServlet extends HttpServlet {
 			request.getSession().setAttribute("booking_id", b.getId());
 		}
 
+		if(login_guest.getAdmin_flag() == 0) {
+			request.setAttribute("boss", 1);
+		}
+
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/edit.jsp");
         rd.forward(request, response);
 	}

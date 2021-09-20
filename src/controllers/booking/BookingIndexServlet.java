@@ -53,6 +53,7 @@ public class BookingIndexServlet extends HttpServlet {
 				    .getResultList();
 
 			request.setAttribute("booking", booking);
+			request.setAttribute("boss", 1);
 
 		} else{
 			List<Booking> booking = em.createNamedQuery("getMyAllbooking", Booking.class)

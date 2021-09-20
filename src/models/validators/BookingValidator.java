@@ -50,7 +50,7 @@ public class BookingValidator {
         java.util.Date d1 = calendar.getTime();
 
         if(ci.after(co) || d1.after(ci) || d1.after(co)) {
-        	errors.add("チェックイン日とチェックアウト日を確認して下さい。");
+        	errors.add("日程を確認して下さい。");
         }
 
 
@@ -61,7 +61,7 @@ public class BookingValidator {
 
 	private static String _validateRoom_type(String room_type) {
         if(room_type.equals("0")) {
-            return "お部屋のタイプを入力してください。";
+            return "お部屋のタイプを入力して下さい。";
             }
 
         return "";
@@ -69,7 +69,7 @@ public class BookingValidator {
 
     private static String _validateAdult_people(String adult_people) {
         if(adult_people == null || adult_people.equals("")) {
-            return "大人の人数を入力してください。";
+            return "大人の人数を入力して下さい。";
             }
 
         return "";
@@ -77,7 +77,7 @@ public class BookingValidator {
 
     private static String _validateChild_people(String child_people) {
         if(child_people == null || child_people.equals("")) {
-            return "小人の人数を入力してください。";
+            return "小人の人数を入力して下さい。";
             }
 
         return "";
@@ -93,7 +93,7 @@ public class BookingValidator {
 */
     private static String _validateCheck_out_date(String check_out_date, String check_in_date) {
         if(check_out_date.equals(check_in_date)) {
-            return "チェックイン日とチェックアウト日を確認して下さい。";
+            return "日程をを確認して下さい。";
             }
 
         return "";

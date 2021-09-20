@@ -38,6 +38,7 @@ public class BookingShowServlet extends HttpServlet {
 
 		em.close();
 
+		request.setAttribute("boss", 1);
 		request.setAttribute("booking", b);
 		request.setAttribute("_token", request.getSession().getId());
 

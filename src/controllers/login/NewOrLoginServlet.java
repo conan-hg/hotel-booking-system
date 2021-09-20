@@ -36,6 +36,7 @@ public class NewOrLoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("_token", request.getSession().getId());
 		request.setAttribute("hasError",false);
+		request.setAttribute("button", 1);
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/new_or_login.jsp");
 		rd.forward(request, response);

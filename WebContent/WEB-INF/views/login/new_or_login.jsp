@@ -4,15 +4,20 @@
 	<c:param name="content">
 		<div class="new_or_login_content">
 			<div id="login_menu">
-				<form method="POST" action="<c:url value='/login' />">
+				<div class="login_content">
+				<form method="POST" action="<c:url value='/new/or/login' />">
 	          			<c:import url="login_form.jsp" />
 	          	</form>
+	          	</div>
 			</div>
 			<div id="new_guest">
 				<div class="new_guest_content">
-					<h2><a href="<c:url value='/guests/new' />">新規登録</a></h2>
-					<br />
 					<p>アカウントを<br />お持ちでない方は<br />こちらから</p>
+					<br />
+					<form method="POST" action="<c:url value='/guests/new' />">
+	          			<input type="hidden" name="_token" value="${_token}" />
+						<button type="submit">新規登録へ</button>
+	          		</form>
 				</div>
 			</div>
 		</div>
