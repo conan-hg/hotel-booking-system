@@ -3,10 +3,8 @@ package controllers.booking;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Booking;
 import models.Guest;
-import models.validators.BookingValidator;
 import utils.DBUtil;
 
 /**
@@ -45,17 +42,17 @@ public class BookingCreateServlet extends HttpServlet {
 
 			b.setGuest((Guest)request.getSession().getAttribute("login_guest"));
 
-			b.setRoom_type(request.getParameter("room_type"));
+			b.setRoom_type(request.getSession().getAttribute("room_type").toString());
 
-			b.setAdult_people(request.getParameter("adult_people"));
-			b.setChild_people(request.getParameter("child_people"));
-
-
-			b.setCheck_in_date(Date.valueOf(request.getParameter("check_in_date")));
-			b.setCheck_out_date(Date.valueOf(request.getParameter("check_out_date")));
+			b.setAdult_people(request.getSession().getAttribute("adult_people").toString());
+			b.setChild_people(request.getSession().getAttribute("child_people").toString());
 
 
-			b.setContent(request.getParameter("content"));
+			b.setCheck_in_date(Date.valueOf(request.getSession().getAttribute("check_in_date").toString()));
+			b.setCheck_out_date(Date.valueOf(request.getSession().getAttribute("check_out_date").toString()));
+
+
+			b.setContent(request.getSession().getAttribute("content").toString());
 
 			b.setDelete_flag(0);
 
@@ -63,26 +60,14 @@ public class BookingCreateServlet extends HttpServlet {
 			b.setCreated_at(currentTime);
 			b.setUpdated_at(currentTime);
 
-			List<String> errors = BookingValidator.validate(b);
-			if(errors.size() > 0) {
-				em.close();
+			em.getTransaction().begin();
+			em.persist(b);
+			em.getTransaction().commit();
+			em.close();
+			request.getSession().setAttribute("flush", "登録が完了しました。");
 
-				request.setAttribute("_toekn", request.getSession().getId());
-				request.setAttribute("booking", b);
-				request.setAttribute("errors", errors);
-				request.getSession().removeAttribute("flush");
+			response.sendRedirect(request.getContextPath() + "/logout");
 
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/new.jsp");
-				rd.forward(request, response);
-			} else {
-				em.getTransaction().begin();
-				em.persist(b);
-				em.getTransaction().commit();
-				em.close();
-				request.getSession().setAttribute("flush", "登録が完了しました。");
-
-				response.sendRedirect(request.getContextPath() + "/logout");
-			}
 
 		}
 

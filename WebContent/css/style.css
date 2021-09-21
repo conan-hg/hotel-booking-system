@@ -419,6 +419,39 @@ button {
     border: none;
 }
 
+.booking_price p{
+	display: inline-block;
+	padding: 0px 20px;
+
+}
+
+.booking_price {
+	text-align: center;
+}
+
+.finish_button p{
+	padding-bottom: 15px;
+}
+
+.finish_button {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

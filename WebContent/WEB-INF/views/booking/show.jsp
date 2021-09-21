@@ -58,6 +58,10 @@
 		                    <th>小人</th>
 		                    <td><c:out value="${booking.child_people}" /></td>
 		                </tr>
+		                <tr class="viewer_content_6">
+		                    <th>ご質問内容</th>
+		                    <td><c:out value="${booking.content}" /></td>
+		                </tr>
 		            </tbody>
 		        </table>
 		        </div>

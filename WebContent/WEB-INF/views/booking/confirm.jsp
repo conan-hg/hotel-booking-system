@@ -14,7 +14,7 @@
     		<div id="header">
     			<c:if test="${sessionScope.login_guest != null}">
 					<div class="header_menu_4"><c:out value="${sessionScope.login_guest.name}" />　様</div>
-					<div class="header_menu_6"><a href="<c:url value='/logout' />">logout</a></div>
+					<div class="header_menu_6"><a href="<c:url value='/booking/new' />">戻る</a></div>
 				</c:if>
 			</div>
 	        <div id="content">
@@ -25,12 +25,6 @@
 	            <div class="viewer_container">
 	            <table>
 		            <tbody>
-		            <c:if test="${boss == 1}">
-		            	<tr class="viewer_content_0">
-		                    <th>予約者</th>
-		                    <td><c:out value="${guest.name}" /></td>
-		                </tr>
-    				</c:if>
 		                <tr class="viewer_content_1">
 		                    <th>お部屋のタイプ</th>
 		                    <td>
@@ -41,11 +35,11 @@
 		                </tr>
 		                <tr class="viewer_content_2">
 		                    <th>チェックイン</th>
-		                    <td><fmt:formatDate value="${check_in_date}" pattern="yyyy-MM-dd" /></td>
+		                    <td><c:out value="${check_in_date}" /></td>
 		                </tr>
 		                <tr class="viewer_content_3">
 		                    <th>チェックアウト</th>
-		                    <td><fmt:formatDate value="${check_out_date}" pattern="yyyy-MM-dd" /></td>
+		                    <td><c:out value="${check_out_date}" /></td>
 		                </tr>
 		                <tr class="viewer_content_4">
 		                    <th>大人</th>
@@ -55,13 +49,29 @@
 		                    <th>小人</th>
 		                    <td><c:out value="${child_people}" /></td>
 		                </tr>
+		                <tr class="viewer_content_6">
+		                    <th>ご質問内容</th>
+		                    <td><c:out value="${content}" /></td>
+		                </tr>
 		            </tbody>
 		        </table>
 		        </div>
 
 		        <div class="booking_price">
-					<c:out value="${booking_price}"></c:out>
+		        	<p>宿泊合計金額</p>
+					<p>\<c:out value="${booking_price}"/></p>
 		        </div>
+		        <div class="finish_button">
+		        	<p>※こちらでよろしければ、予約ボタンを押して下さい。</p>
+		        	 <form method="POST" action="<c:url value='/booking/create' />">
+
+
+            			<input type="hidden" name="_token" value="${_token}" />
+						<button type="submit">予約する</button>
+					</form>
+		        </div>
+
+
 	        </div>
 		    </div>
 		</div>

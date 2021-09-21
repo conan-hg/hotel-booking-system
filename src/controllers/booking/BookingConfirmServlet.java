@@ -2,6 +2,7 @@ package controllers.booking;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -59,15 +60,19 @@ public class BookingConfirmServlet extends HttpServlet {
 			b.setContent(request.getParameter("content"));
 			b.setDelete_flag(0);
 
+			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
+			b.setCreated_at(currentTime);
+			b.setUpdated_at(currentTime);
 
-			request.setAttribute("login_guest", (Guest)request.getSession().getAttribute("login_guest"));
-			request.setAttribute("room_type", request.getParameter("room_type"));
-			request.setAttribute("adult_people", request.getParameter("adult_people"));
-			request.setAttribute("child_people", request.getParameter("child_people"));
-			request.setAttribute("check_in_date", Date.valueOf(request.getParameter("check_in_date")));
-			request.setAttribute("check_out_date", Date.valueOf(request.getParameter("check_out_date")));
-			request.setAttribute("content", request.getParameter("content"));
-
+			/*
+			request.getSession().setAttribute("login_guest", (Guest)request.getSession().getAttribute("login_guest"));
+			request.getSession().setAttribute("room_type", request.getParameter("room_type"));
+			request.getSession().setAttribute("adult_people", request.getParameter("adult_people"));
+			request.getSession().setAttribute("child_people", request.getParameter("child_people"));
+			request.getSession().setAttribute("check_in_date", request.getParameter("check_in_date"));
+			request.getSession().setAttribute("check_out_date", request.getParameter("check_out_date"));
+			request.getSession().setAttribute("content", request.getParameter("content"));
+			*/
 
 			int room_type = Integer.parseInt(request.getParameter("room_type"));
 			int room_price = 0;
@@ -108,7 +113,6 @@ public class BookingConfirmServlet extends HttpServlet {
 
 
 	        int booking_price = 0;
-
 	        booking_price =(room_price + adult_price + child_price) * dayDiff;
 
 	        request.setAttribute("booking_price",booking_price);

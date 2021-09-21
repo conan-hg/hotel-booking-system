@@ -26,9 +26,9 @@
 <br /><br /><br />
 
 <label for="number_of_people">人数</label><br />
-<label>＜大人＞</label><br />
+<label>大人</label><br />
 <input type="text" name="adult_people" value="${booking.adult_people}" /><br />
-<label>＜小人＞</label><br />
+<label>小人（～12歳）</label><br />
 <input type="text" name="child_people" value="${booking.child_people}" /><br />
 <br /><br />
 
