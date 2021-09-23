@@ -69,7 +69,7 @@ body {
 }
 
 .title {
-	margin: 130px 0px 0px 0px;
+	margin: 130px 0px 200px 0px;
 	font:italic normal normal 60px/1.4em avenir-lt-w01_85-heavy1475544,sans-serif;
 	font-weight: bolder;
 	letter-spacing: 0.1em;
@@ -289,6 +289,12 @@ body {
 .viewer_content_5 {
 	width: 100%;
 	box-sizing: border-box;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.viewer_content_6 {
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .viewer_container {
@@ -437,12 +443,73 @@ button {
 	text-align: center;
 }
 
+#flush_success {
+	width: 250px;
+	margin-left:20px;
+	text-align: center;
+	padding: 30px 40px;
+	font-weight: bolder;
+	border-radius: 5px;
+	opacity: 0.5;
+	color: #fff;
+	background-color: #DCDCDC;
+
+}
 
 
 
+.room_content .title {
+	display: inline-block;
+	padding: 20px 20px 0px 70px;
+	margin: 90px 0px 20px 0px;
+	font-size: 80px;
+}
 
+.room_content .secondary_title {
+	display: inline-block;
+	margin: 0px 0px 0px 30px;
 
+}
 
+.room_content {
+	background-color: #b6e8e3;
+}
+
+.img_a, .img_b, .img_c {
+	width: 474px;
+    margin: 0px 0px 0px 70px;
+}
+
+.text-desc {
+	padding: 70px 0px 35px 0px;
+}
+
+.text-title {
+	display: flex;
+	flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+	width: 230px;
+    height: 70px;
+    margin: 0px 0px 0px 40px;
+	text-align: center;
+	border: solid;
+	border-width: thick;
+	border-color: #fff;
+	background-color: #b6e8e3;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.menu_a, .menu_b, .menu_c  {
+	margin: 20px auto 0px 120px;
+}
+
+.room_a, .room_b, .room_c  {
+	display: flex;
+	margin: 30px 0px 0px 0px;
+}
 
 
 

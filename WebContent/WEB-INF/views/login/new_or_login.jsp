@@ -2,6 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
 	<c:param name="content">
+	<c:if test="${flush != null}">
+		<div id="flush_success">
+		    <c:out value="${flush}"></c:out>
+	    </div>
+	</c:if>
 		<div class="new_or_login_content">
 			<div id="login_menu">
 				<div class="login_content">
@@ -14,7 +19,7 @@
 				<div class="new_guest_content">
 					<p>アカウントを<br />お持ちでない方は<br />こちらから</p>
 					<br />
-					<form method="POST" action="<c:url value='/guests/new' />">
+					<form method="GET" action="<c:url value='/guests/new' />">
 	          			<input type="hidden" name="_token" value="${_token}" />
 						<button type="submit">新規登録へ</button>
 	          		</form>

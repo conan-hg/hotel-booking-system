@@ -77,6 +77,8 @@ public class GuestsCreateServlet extends HttpServlet {
 				em.getTransaction().commit();
 				em.close();
 
+
+				request.getSession().setAttribute("flush", "登録を完了致しました。");
 				response.sendRedirect(request.getContextPath() + "/new/or/login");
 
 

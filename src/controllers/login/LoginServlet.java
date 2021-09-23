@@ -86,7 +86,7 @@ public class LoginServlet extends HttpServlet {
 		} else{
 			request.getSession().setAttribute("login_guest", g);
 
-			request.getSession().setAttribute("flush", "ログインしました。");
+			request.getSession().setAttribute("flush", "ログインしました");
 			response.sendRedirect(request.getContextPath() + "/booking/index");
 		}
 	}

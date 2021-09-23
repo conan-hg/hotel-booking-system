@@ -43,11 +43,19 @@
 		                </tr>
 		                <tr class="viewer_content_4">
 		                    <th>大人</th>
-		                    <td><c:out value="${adult_people}" /></td>
+		                    <td>
+		                    	<c:if test="${adult_people == 1}">0名</c:if>
+		                    	<c:if test="${adult_people == 2}">1名</c:if>
+		                    	<c:if test="${adult_people == 3}">2名</c:if>
+		                    </td>
 		                </tr>
 		                <tr class="viewer_content_5">
-		                    <th>小人</th>
-		                    <td><c:out value="${child_people}" /></td>
+		                    <th>小人（～7歳）</th>
+		                    <td>
+		                    	<c:if test="${child_people == 1}">0名</c:if>
+		                    	<c:if test="${child_people == 2}">1名</c:if>
+		                    	<c:if test="${child_people == 3}">2名</c:if>
+		                    </td>
 		                </tr>
 		                <tr class="viewer_content_6">
 		                    <th>ご質問内容</th>
@@ -64,8 +72,6 @@
 		        <div class="finish_button">
 		        	<p>※こちらでよろしければ、予約ボタンを押して下さい。</p>
 		        	 <form method="POST" action="<c:url value='/booking/create' />">
-
-
             			<input type="hidden" name="_token" value="${_token}" />
 						<button type="submit">予約する</button>
 					</form>

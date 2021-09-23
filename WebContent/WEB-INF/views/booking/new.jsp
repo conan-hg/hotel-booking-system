@@ -17,6 +17,11 @@
 				</c:if>
 			</div>
     		<div id="content">
+    		<c:if test="${flush != null}">
+				<div id="flush_success">
+				    <c:out value="${flush}"></c:out>
+			    </div>
+			</c:if>
 	    		<div class="new_booking_form">
 	    			<div class="booking_content">
 	    				<form method="POST" action="<c:url value='/booking/confirm' />">

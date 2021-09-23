@@ -64,7 +64,7 @@ public class BookingConfirmServlet extends HttpServlet {
 			b.setCreated_at(currentTime);
 			b.setUpdated_at(currentTime);
 
-			/*
+
 			request.getSession().setAttribute("login_guest", (Guest)request.getSession().getAttribute("login_guest"));
 			request.getSession().setAttribute("room_type", request.getParameter("room_type"));
 			request.getSession().setAttribute("adult_people", request.getParameter("adult_people"));
@@ -72,7 +72,7 @@ public class BookingConfirmServlet extends HttpServlet {
 			request.getSession().setAttribute("check_in_date", request.getParameter("check_in_date"));
 			request.getSession().setAttribute("check_out_date", request.getParameter("check_out_date"));
 			request.getSession().setAttribute("content", request.getParameter("content"));
-			*/
+
 
 			int room_type = Integer.parseInt(request.getParameter("room_type"));
 			int room_price = 0;
@@ -129,6 +129,12 @@ public class BookingConfirmServlet extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/new.jsp");
 				rd.forward(request, response);
 			} else {
+
+				if(request.getSession().getAttribute("flush") != null) {
+		            request.setAttribute("flush", request.getSession().getAttribute("flush"));
+		            request.getSession().removeAttribute("flush");
+		        }
+
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/confirm.jsp");
 				rd.forward(request, response);
 			}

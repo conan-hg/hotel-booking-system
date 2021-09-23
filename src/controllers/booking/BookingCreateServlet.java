@@ -1,10 +1,11 @@
-package controllers.booking;
+		package controllers.booking;
 
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.EntityManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -60,13 +61,22 @@ public class BookingCreateServlet extends HttpServlet {
 			b.setCreated_at(currentTime);
 			b.setUpdated_at(currentTime);
 
+
 			em.getTransaction().begin();
 			em.persist(b);
 			em.getTransaction().commit();
 			em.close();
-			request.getSession().setAttribute("flush", "登録が完了しました。");
 
-			response.sendRedirect(request.getContextPath() + "/logout");
+			request.getSession().removeAttribute("login_guest");
+			request.getSession().removeAttribute("room_type");
+			request.getSession().removeAttribute("adult_people");
+			request.getSession().removeAttribute("child_people");
+			request.getSession().removeAttribute("check_in_date");
+			request.getSession().removeAttribute("check_out_date");
+			request.getSession().removeAttribute("content");
+
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/booking/finish.jsp");
+	        rd.forward(request, response);
 
 
 		}

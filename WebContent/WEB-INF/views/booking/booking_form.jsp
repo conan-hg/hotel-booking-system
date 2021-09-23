@@ -10,11 +10,6 @@
 
     </div>
 </c:if>
-<c:if test="${flush != null}">
-	<div id="flush_success">
-	    <c:out value="${flush}"></c:out>
-    </div>
-</c:if>
 <br /><br />
 <label for="room_type">部屋のタイプ</label><br />
 <select name="room_type">
@@ -23,13 +18,23 @@
     <option value="2"<c:if test="${booking.room_type == 2}">selected</c:if>>Bタイプ</option>
     <option value="3"<c:if test="${booking.room_type == 3}">selected</c:if>>Cタイプ</option>
 </select>
-<br /><br /><br />
+<br /><br />
 
-<label for="number_of_people">人数</label><br />
-<label>大人</label><br />
-<input type="text" name="adult_people" value="${booking.adult_people}" /><br />
-<label>小人（～12歳）</label><br />
-<input type="text" name="child_people" value="${booking.child_people}" /><br />
+<label for="number_of_people">宿泊人数</label><br />
+<label for="adult_people">大人</label><br />
+<select name="adult_people">
+	<option value="0"<c:if test="${booking.adult_people == 0}">selected</c:if>>-------</option>
+    <option value="1"<c:if test="${booking.adult_people == 1}">selected</c:if>>0名</option>
+    <option value="2"<c:if test="${booking.adult_people == 2}">selected</c:if>>1名</option>
+    <option value="3"<c:if test="${booking.adult_people == 3}">selected</c:if>>2名</option>
+</select><br />
+<label for="child_people">小人（～7歳）</label><br />
+<select name="child_people">
+	<option value="0"<c:if test="${booking.child_people == 0}">selected</c:if>>-------</option>
+	<option value="1"<c:if test="${booking.child_people == 1}">selected</c:if>>0名</option>
+    <option value="2"<c:if test="${booking.child_people == 2}">selected</c:if>>1名</option>
+    <option value="3"<c:if test="${booking.child_people == 3}">selected</c:if>>2名</option>
+</select>
 <br /><br />
 
 <label for="check_in_date">日程</label><br />

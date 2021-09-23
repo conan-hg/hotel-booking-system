@@ -72,7 +72,7 @@ public class BookingUpdateServlet extends HttpServlet {
 				em.getTransaction().begin();
 				em.getTransaction().commit();
 				em.close();
-				request.getSession().setAttribute("flush", "登録が完了しました。");
+				request.getSession().setAttribute("flush", "予約内容を変更致しました");
 
 				request.getSession().removeAttribute("booking_id");
 

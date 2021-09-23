@@ -44,7 +44,7 @@ public class BookingDestroyServlet extends HttpServlet {
 			em.getTransaction().begin();
 			em.getTransaction().commit();
 			em.close();
-			request.getSession().setAttribute("flush", "削除が完了しました。");
+			request.getSession().setAttribute("flush", "削除が完了しました");
 
 			response.sendRedirect(request.getContextPath() + "/booking/index");
 

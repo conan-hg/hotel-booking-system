@@ -26,10 +26,18 @@ public class BookingValidator {
             errors.add(child_people_error);
         }
 
-/*        String check_in_date_error = _validateCheck_in_date(String.valueOf(b.getCheck_in_date()));
+        String adult_people_child_people_error = _validateAdult_people_Child_people(b.getAdult_people(), b.getChild_people());
+        if(!adult_people_child_people_error.equals("")) {
+            errors.add(adult_people_child_people_error);
+        }
+
+
+        /*
+		String check_in_date_error = _validateCheck_in_date(String.valueOf(b.getCheck_in_date()));
         if(!check_in_date_error.equals("")) {
             errors.add(check_in_date_error);
-        }*/
+        }
+        */
 
         String check_out_date_error = _validateCheck_out_date(String.valueOf(b.getCheck_in_date()), String.valueOf(b.getCheck_out_date()));
         if(!check_out_date_error.equals("")) {
@@ -68,7 +76,7 @@ public class BookingValidator {
     }
 
     private static String _validateAdult_people(String adult_people) {
-        if(adult_people == null || adult_people.equals("")) {
+        if(adult_people.equals("0")) {
             return "大人の人数を入力して下さい。";
             }
 
@@ -76,8 +84,16 @@ public class BookingValidator {
     }
 
     private static String _validateChild_people(String child_people) {
-        if(child_people == null || child_people.equals("")) {
+        if(child_people.equals("0")) {
             return "小人の人数を入力して下さい。";
+            }
+
+        return "";
+    }
+
+    private static String _validateAdult_people_Child_people(String adult_people, String child_people) {
+        if(adult_people.equals("1") && child_people.equals("1")) {
+            return "人数を確認して下さい。";
             }
 
         return "";

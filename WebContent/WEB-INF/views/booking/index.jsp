@@ -18,15 +18,15 @@
 				</c:if>
 			</div>
     		<div id="content">
+    		<c:if test="${flush != null}">
+				<div id="flush_success">
+				    <c:out value="${flush}"></c:out>
+			    </div>
+			</c:if>
     		<div class="booking_content">
     		<div class="booking_content_title">
     			<h1>予約一覧</h1>
     		</div>
-    		<c:if test="${flush != null}">
-	            <div id="flush_success">
-	                <c:out value="${flush}"></c:out>
-	            </div>
-	        </c:if>
 			<br />
     		<div class="booking_table">
     			<div class="booking_list_top">
