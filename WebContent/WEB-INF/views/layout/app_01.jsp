@@ -20,18 +20,14 @@
 			        <label for="menu-btn-check" class="menu-btn"><span></span></label>
 			        <div class="menu-content">
 				      	<ul>
-				      		<li class="header_menu_0"><h2><a href="<c:url value='/index.html' />">top</a></h2></li>
-			    			<li class="header_menu_1"><h2><a href="<c:url value='/new/or/login' />">reserve</a></h2></li>
-			    			<li class="header_menu_2"><h2><a href="<c:url value='/login' />">my reserve</a></h2></li>
-			    			<li class="header_menu_3"><h2><a href="<c:url value='/faq/index' />">faq.</a></h2></li>
+				      		<li class="header_menu_4"><c:out value="${sessionScope.login_guest.name}" />　様</li>
+							<li class="header_menu_6"><a href="<c:url value='/logout' />">logout</a></li>
 				      	</ul>
 				    </div>
 			    </div>
-				<div class="pc_header">
-					<div class="header_menu_0"><h2><a href="<c:url value='/index.html' />">top</a></h2></div>&nbsp;
-	    			<div class="header_menu_1"><h2><a href="<c:url value='/new/or/login' />">reserve</a></h2></div>&nbsp;
-	    			<div class="header_menu_2"><h2><a href="<c:url value='/login' />">my reserve</a></h2></div>&nbsp;
-	    			<div class="header_menu_3"><h2><a href="<c:url value='/faq/index' />">faq.</a></h2></div>&nbsp;
+    			<div class="pc_header">
+					<div class="header_menu_4"><c:out value="${sessionScope.login_guest.name}" />　様</div>
+					<div class="header_menu_6"><a href="<c:url value='/logout' />">logout</a></div>
 				</div>
     		</div>
     		<div id="content">

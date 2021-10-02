@@ -8,16 +8,16 @@
 		</div>
 		<div class="faq_1">
 			<div class="faq_q1">
-				<span>Q : 朝食は食べれますか。</span>
+				<span>Q : 朝食は食べれますか。<br /><br /></span>
 			</div>
 			<div class="faq_a1">
-				<span>朝食は1Fにあるカフェでお召し上がり頂けます。</span><br /> <span>提供のお時間は7：30～10：30までとなっております。</span><br />
-				<span>また、朝食はご予約が必要ですので、チェックイン時に朝食のご予約を承っています。</span><br />
+				<span>朝食は1Fにあるカフェでお召し上がり頂けます。</span><br /> <span>提供のお時間は7：30～10：30<span class="br">までとなっております。</span></span><br />
+				<span>また、朝食はご予約が必要ですので、<span class="br">チェックイン時に朝食のご予約を承っています。</span></span><br />
 			</div>
 		</div>
 		<div class="faq_2">
 			<div class="faq_q2">
-				<span>Q :アメニティは何がありますか </span>
+				<span>Q :アメニティは何がありますか <br /><br /></span>
 			</div>
 			<div class="faq_a2">
 				<span>アメニティは下記をご用意しております。</span><br /> <span>歯ブラシ</span><br /> <span>コーム</span><br />
@@ -27,19 +27,19 @@
 		</div>
 		<div class="faq_3">
 			<div class="faq_q3">
-				<span>Q : フロント営業時間について教えてください</span>
+				<span>Q : フロント営業時間について教えてください<br /><br /></span>
 			</div>
 			<div class="faq_a3">
-				<span>フロントの営業時間は 8:00～23:00 となっております。</span><br /> <span>また、当ホテルの電話のご対応につきましても8:00~23:00となっております。</span><br />
-				<span>それ以外の時間はご対応しかねますのでご了承ください。</span><br />
+				<span>フロントの営業時間は <span class="br">8:00～23:00 となっております。</span></span><br /> <span>また、当ホテルの電話のご対応につきましても<span class="br">8:00~23:00となっております。</span></span><br />
+				<span>それ以外の時間は<span class="br">ご対応しかねますのでご了承ください。</span></span><br />
 			</div>
 		</div>
 		<div class="faq_4">
 			<div class="faq_q4">
-				<span>Q : ホテルは禁煙ですか。</span>
+				<span>Q : ホテルは禁煙ですか。<br /><br /></span>
 			</div>
 			<div class="faq_a4">
-				<span>当ホテルは 全館禁煙 となっております。</span><br /> <span>喫煙所は屋外に2箇所ございますので喫煙の際はそちらをご利用ください。</span><br />
+				<span>当ホテルは 全館禁煙 となっております。</span><br /> <span>喫煙所は屋外に2箇所ございますので、<span class="br">喫煙の際はそちらをご利用ください。</span></span><br />
 			</div>
 		</div>
 	</div>
