@@ -14,9 +14,21 @@ body {
 	color: #333333;
 	font-family: normal normal normal 18px/1.4em futura-lt-w01-light,sans-serif;
 	background-image: url("https://images.unsplash.com/photo-1583930263826-a1c6a639eaf2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80");
-	background-attachment: fixed;
-	background-size: cover;
-	background-repeat: no-repeat;
+	background-position: top;
+	position: relative;
+}
+
+.toppage:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.toppage_wrap {
+	position: relative;
 }
 
 #content {
@@ -370,7 +382,7 @@ body {
 }
 
 .booking_action {
-	width: 22%;
+	width: 14%;
 }
 
 .booking_action a{
@@ -386,11 +398,11 @@ body {
 }
 
 .booking_check_out_date {
-	width: 22%;
+	width: 31%;
 }
 
 .booking_check_in_date {
-	width: 22%;
+	width: 28%;
 }
 
 .booking_room_type {
@@ -398,7 +410,7 @@ body {
 }
 
 .booking_guest_id {
-	width: 10%;
+	width: 18%;
 }
 
 table td {
@@ -512,10 +524,10 @@ button {
 .room_content {
 	padding: 0px 0px 100px 0px;
 	text-align: center;
-	background-image: url("https://images.unsplash.com/photo-1583930263826-a1c6a639eaf2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80");
+	background-image: url("https://images.unsplash.com/photo-1476054738960-e97a1eb3ba40?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80");
 	background-attachment: fixed;
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-position: top;
 	position: relative;
 	color: #fff;
 }

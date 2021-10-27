@@ -79,6 +79,7 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
             request.setAttribute("name", name);
+            request.setAttribute("button", 0);
 
 
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");

@@ -80,7 +80,7 @@
 
 		        <div class="booking_price">
 		        	<p>宿泊合計金額</p>
-					<p>\<c:out value="${booking_price}"/></p>
+					<p><c:out value="${booking_price}"/>円</p>
 		        </div>
 		        <div class="finish_button">
 		        	<p>※こちらでよろしければ、<span class="br">予約ボタンを押して下さい。</span></p>

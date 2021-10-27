@@ -14,6 +14,7 @@
     <body>
     	<div id="wrapper">
     		<div class="toppage">
+    		<div class="toppage_wrap">
     		<div id="header">
     			<div class="hamburger-menu">
 			        <input type="checkbox" id="menu-btn-check">
@@ -41,6 +42,7 @@
 		    </c:if>
 		    <div class="heading">
 		    	<h2 class="title">shibuya, <span class="br">hotel</span></h2>
+		    </div>
 		    </div>
 		    </div>
 		    <div class="concept_content">

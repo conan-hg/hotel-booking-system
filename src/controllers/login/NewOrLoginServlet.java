@@ -80,6 +80,7 @@ public class NewOrLoginServlet extends HttpServlet {
 			request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
             request.setAttribute("name", name);
+            request.setAttribute("button", 1);
 
 
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/new_or_login.jsp");
